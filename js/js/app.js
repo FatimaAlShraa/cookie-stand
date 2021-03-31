@@ -75,7 +75,7 @@ let Tokyo={
     avarge:1.2,
    randomCust:[],
   avaregCustprHor:[],
-  total:0,
+  Total:0,
 // total:sum(avaregCustprHor),
  getRandomcookis:  function () {
        for(let i=0; i<=workHour.length;i++){
@@ -91,7 +91,7 @@ averageCust: function () {
      let mult= this.avarge*this.randomCust[i] 
      mult=Math.floor(mult)
      this.avaregCustprHor.push(`${mult}`)
-     this.total+=mult
+     this.Total+=mult
 
         console.log(this.avaregCustprHor[i])
     }
@@ -106,26 +106,26 @@ Tokyo.averageCust()
 
 let cook=document.getElementById
 ('cook')
-let h2element=document.createElement("h2")
-cook.appendChild(h3element);
-h3element.textContent=Tokyo.shopName
+let Th2element=document.createElement("h2")
+cook.appendChild(Th2element);
+Th2element.textContent=Tokyo.shopName
 //console.log(parent);
 ////let mainDiv=document.getElementById("Seattle");
 //et test =mainDiv.createElement("h2");
 
-let ulelement = document.createElement("ul");
-cook.appendChild(ulelement);
+let tulelement = document.createElement("ul");
+cook.appendChild(tulelement);
 //mainDiv.appendChild(ulelement)
 
 for(let i=0;i<workHour.length;i++){
-    let lielement =document.createElement("li")
-    ulelement.appendChild(lielement);
-    lielement.textContent=`${workHour[i]} ${Tokyo.avaregCustprHor[i]} cookies  `
+    let tlielement =document.createElement("li")
+    tulelement.appendChild(tlielement);
+    tlielement.textContent=`${workHour[i]} ${Tokyo.avaregCustprHor[i]} cookies  `
 
 }
-let totalElement=document.createElement("li");
-ulelement.appendChild(totalElement);
-totalElement.textContent=`total=${Tokyo.total}cookies`
+let TotalElement=document.createElement("li");
+ulelement.appendChild(TotalElement);
+TotalElement.textContent=`total=${Tokyo.Total}cookies`
 
 
 
@@ -138,7 +138,7 @@ let Dubai={
     avarge:3.7,
    randomCust:[],
   avaregCustprHor:[],
-  total:0,
+  dtotal:0,
 // total:sum(avaregCustprHor),
  getRandomcookis:  function () {
        for(let i=0; i<=workHour.length;i++){
@@ -154,7 +154,7 @@ averageCust: function () {
      let mult= this.avarge*this.randomCust[i] 
      mult=Math.floor(mult)
      this.avaregCustprHor.push(`${mult}`)
-     this.total+=mult
+     this.dtotal+=mult
 
         console.log(this.avaregCustprHor[i])
     }
@@ -168,27 +168,27 @@ Dubai.averageCust()
 
 
 let dubai=document.getElementById
-('parent')
-let h2element=document.createElement("h2")
-dubai.appendChild(h2element);
-h2element.textContent=Dubai.shopName
+('dubai')
+let dh2element=document.createElement("h2")
+dubai.appendChild(dh2element);
+dh2element.textContent=Dubai.shopName
 //console.log(parent);
 ////let mainDiv=document.getElementById("Seattle");
 //et test =mainDiv.createElement("h2");
 
-let ulelement = document.createElement("ul");
-dubai.appendChild(ulelement);
+let dulelement = document.createElement("ul");
+dubai.appendChild(dulelement);
 //mainDiv.appendChild(ulelement)
 
 for(let i=0;i<workHour.length;i++){
-    let lielement =document.createElement("li")
-    ulelement.appendChild(lielement);
-    lielement.textContent=`${workHour[i]} ${Dubai.avaregCustprHor[i]} cookies  `
+    let dlielement =document.createElement("li")
+    dulelement.appendChild(dlielement);
+    dlielement.textContent=`${workHour[i]} ${Dubai.avaregCustprHor[i]} cookies  `
 
 }
-let totalElement=document.createElement("li");
-ulelement.appendChild(totalElement);
-totalElement.textContent=`total=${Dubai.total}cookies`
+let dtotalElement=document.createElement("li");
+dulelement.appendChild(dtotalElement);
+dtotalElement.textContent=`total=${Dubai.total}cookies`
 
 
 
@@ -201,7 +201,7 @@ let Paris={
     avarge:2.3,
    randomCust:[],
   avaregCustprHor:[],
-  total:0,
+  ptotal:0,
 // total:sum(avaregCustprHor),
  getRandomcookis:  function () {
        for(let i=0; i<=workHour.length;i++){
@@ -217,7 +217,7 @@ averageCust: function () {
      let mult= this.avarge*this.randomCust[i] 
      mult=Math.floor(mult)
      this.avaregCustprHor.push(`${mult}`)
-     this.total+=mult
+     this.ptotal+=mult
 
         console.log(this.avaregCustprHor[i])
     }
@@ -232,26 +232,26 @@ Paris.averageCust()
 
 let paris=document.getElementById
 ('paris')
-let h2element=document.createElement("h2")
-paris.appendChild(h2element);
-h2element.textContent=Paris.shopName
+let ph2element=document.createElement("h2")
+paris.appendChild(ph2element);
+ph2element.textContent=Paris.shopName
 //console.log(parent);
 ////let mainDiv=document.getElementById("Seattle");
 //et test =mainDiv.createElement("h2");
 
-let ulelement = document.createElement("ul");
-paris.appendChild(ulelement);
+let pulelement = document.createElement("ul");
+paris.appendChild(pulelement);
 //mainDiv.appendChild(ulelement)
 
 for(let i=0;i<workHour.length;i++){
-    let lielement =document.createElement("li")
-    ulelement.appendChild(lielement);
-    lielement.textContent=`${workHour[i]} ${Seattle.avaregCustprHor[i]} cookies  `
+    let plielement =document.createElement("li")
+    pulelement.appendChild(plielement);
+    plielement.textContent=`${workHour[i]} ${Seattle.avaregCustprHor[i]} cookies  `
 
 }
-let totalElement=document.createElement("li");
-ulelement.appendChild(totalElement);
-totalElement.textContent=`total=${Paris.total}cookies`
+let ptotalElement=document.createElement("li");
+pulelement.appendChild(ptotalElement);
+ptotalElement.textContent=`total=${Paris.ptotal}cookies`
 
 
 
@@ -266,7 +266,7 @@ let Lima={
     avarge:4.6,
    randomCust:[],
   avaregCustprHor:[],
-  total:0,
+  ltotal:0,
 // total:sum(avaregCustprHor),
  getRandomcookis:  function () {
        for(let i=0; i<=workHour.length;i++){
@@ -282,7 +282,7 @@ averageCust: function () {
      let mult= this.avarge*this.randomCust[i] 
      mult=Math.floor(mult)
      this.avaregCustprHor.push(`${mult}`)
-     this.total+=mult
+     this.ltotal+=mult
 
         console.log(this.avaregCustprHor[i])
     }
@@ -297,32 +297,32 @@ Lima.averageCust()
 
 let lima=document.getElementById
 ('lima')
-let h2element=document.createElement("h2")
-lima.appendChild(h2element);
-h2element.textContent=Lima.shopName
+let lh2element=document.createElement("h2")
+lima.appendChild(lh2element);
+lh2element.textContent=Lima.shopName
 //console.log(parent);
 ////let mainDiv=document.getElementById("Seattle");
 //et test =mainDiv.createElement("h2");
 
-let ulelement = document.createElement("ul");
-lima.appendChild(ulelement);
+let lulelement = document.createElement("ul");
+lima.appendChild(lulelement);
 //mainDiv.appendChild(ulelement)
 
 for(let i=0;i<workHour.length;i++){
-    let lielement =document.createElement("li")
-    ulelement.appendChild(lielement);
-    lielement.textContent=`${workHour[i]} ${Lima.avaregCustprHor[i]} cookies  `
+    let llielement =document.createElement("li")
+    lulelement.appendChild(llielement);
+    llielement.textContent=`${workHour[i]} ${Lima.avaregCustprHor[i]} cookies  `
 
 }
-let totalElement=document.createElement("li");
-ulelement.appendChild(totalElement);
-totalElement.textContent=`total=${Lima.total}cookies`
+let ltotalElement=document.createElement("li");
+lulelement.appendChild(ltotalElement);
+ltotalElement.textContent=`total=${Lima.total}cookies`
 
 
 
 
-hello
-hello
+
+
 
 
 
