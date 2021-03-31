@@ -1,43 +1,179 @@
 'use strict';
-let workHour=['6am','7am','8am','9am', '10am' ,'11am' , '12pm' , '1pm', '2pm', '3pm' ,'4pm', '5pm','6pm','7pm']
+let workHour = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
+let shops = [];
 
-let Seattle={
-   shopName: 'seattle',
-    minHour:23,
-    maxHour:65,
-    avarge:6.3,
-   randomCust:[],
-  avaregCustprHor:[],
-  total:0,
-// total:sum(avaregCustprHor),
- getRandomcookis:  function () {
+function Cityshop(shopName, minHour, maxHour, avarge,total, getRandomcookis, averageCust) {
+    this.shopName = shopName,
+    this.minHour = minHour,
+        this.maxHour = maxHour,
+        this.avarge = avarge,
+        this.randomCust = [],
+        this.avaregCustprHor = [],
+        this.total = 0 ,
+
+
+        this.getRandomcookis = this.getRandomcookis /* function () {
        for(let i=0; i<=workHour.length;i++){
            this.randomCust.push (Math.floor(Math.random() *
            (this.maxHour - this.minHour)) + this.minHour);
            console.log(this.randomCust[i]);
        } ;
-   },
-        
+   },*/
+
+
+    this.averageCust = this.averageCust
+    /* function () {
+        for(let i=0;i<workHour.length;i++){
+         let mult= this.avarge*this.randomCust[i] 
+         mult=Math.floor(mult)
+         this.avaregCustprHor.push(`${mult}`)
+         this.total+=mult
     
-averageCust: function () {
-    for(let i=0;i<workHour.length;i++){
-     let mult= this.avarge*this.randomCust[i] 
-     mult=Math.floor(mult)
-     this.avaregCustprHor.push(`${mult}`)
-     this.total+=mult
+            console.log(this.avaregCustprHor[i])
+        }*/
+    shops.push(this)
+
+}
+
+//console.log(Seattle);
+//Seattle.getRandomcookis()
+//Seattle.averageCust()
+
+
+
+
+Cityshop.prototype.getRandomcookis = function () {
+    for (let i = 0; i <= workHour.length; i++) {
+        this.randomCust.push(Math.floor(Math.random() *
+            (this.maxHour - this.minHour)) + this.minHour);
+        console.log(this.randomCust[i]);
+    };
+}
+
+Cityshop.prototype.averageCust = function () {
+    for (let i = 0; i < workHour.length; i++) {
+        let mult = this.avarge * this.randomCust[i]
+        mult = Math.floor(mult)
+        this.avaregCustprHor.push(`${mult}`)
+        this.total += mult
 
         console.log(this.avaregCustprHor[i])
+
     }
+}
 
+let seattle = new Cityshop('seattle',23, 65, 6.3);
+let Tokyo = new Cityshop('Tokyo',3, 24, 1.2);
+let Dubai = new Cityshop('Dubai',11, 38, 3.7);
+let Paris = new Cityshop('Pris',20, 38, 2.3);
+let Lima = new Cityshop('lima',2, 16, 4.6);
+
+
+seattle.getRandomcookis();
+Tokyo.getRandomcookis();
+Dubai.getRandomcookis();
+Paris.getRandomcookis();
+Lima.getRandomcookis();
+
+let parent = document.getElementById("parent");
+let table = document.createElement('table');
+parent.appendChild(table);
+let headingRow = document.createElement('tr');
+table.appendChild(headingRow);
+let heading = ['', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', 'Daily Location Total']
+
+for (let i = 0; i < heading.length; i++) {
+    let thElement = document.createElement('th');
+    headingRow.appendChild(thElement);
+    thElement.textContent = heading[i];
+
+
+
+}
+
+
+Cityshop.prototype.render=function(){
+    //for(let i=0;i<shops.length ; i++){
+    let shopRow=document.createElement('tr');
+    table.appendChild(shopRow);
+    let nameData=document.createElement('td');
+    shopRow.appendChild(nameData);
+    nameData.textContent= this.shopName
+
+    for(let i=0;i<workHour.length ; i++){
+        let cookie=document.createElement('td')
+        shopRow.appendChild(cookie)
+        cookie.textContent=this.randomCust[i]
+
+
+      }  //console.log('hello ',shops[i]);
+    let dialyTotal=document.createElement('td')
+    shopRow.appendChild(dialyTotal)
+    dialyTotal.textContent=this.total
+}
+seattle.render()
+Tokyo.render()
+Dubai.render()
+Paris.render()
+Lima.render()
+
+
+
+
+    let lastRow=document.createElement('tr')
+    table.appendChild(lastRow);
+    lastRow.textContent='total'
+    for (let i = 0; i <workHour.length; i++) {
+        for (let i = 0; i <this.randomCust; i++) {
+
+            let totalFinal=document.createElement('td')
+        lastRow.appendChild(totalFinal);
+        totalFinal.textContent=this.avaregCustprHor[i]
+            
+        }
+        
+        
+        
+    }
     
-}
-}
-console.log(Seattle);
-Seattle.getRandomcookis()
-Seattle.averageCust()
 
 
-let parent=document.getElementById
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*let parent=document.getElementById
 ('parent')
 let h2element=document.createElement("h2")
 parent.appendChild(h2element);
@@ -84,11 +220,11 @@ let Tokyo={
            console.log(this.randomCust[i]);
        } ;
    },
-        
-    
+
+
 averageCust: function () {
     for(let i=0;i<workHour.length;i++){
-     let mult= this.avarge*this.randomCust[i] 
+     let mult= this.avarge*this.randomCust[i]
      mult=Math.floor(mult)
      this.avaregCustprHor.push(`${mult}`)
      this.Ttotal+=mult
@@ -96,7 +232,7 @@ averageCust: function () {
         console.log(this.avaregCustprHor[i])
     }
 
-    
+
 }
 }
 console.log(Tokyo)
@@ -147,11 +283,11 @@ let Dubai={
            console.log(this.randomCust[i]);
        } ;
    },
-        
-    
+
+
 averageCust: function () {
     for(let i=0;i<workHour.length;i++){
-     let mult= this.avarge*this.randomCust[i] 
+     let mult= this.avarge*this.randomCust[i]
      mult=Math.floor(mult)
      this.avaregCustprHor.push(`${mult}`)
      this.dtotal+=mult
@@ -159,7 +295,7 @@ averageCust: function () {
         console.log(this.avaregCustprHor[i])
     }
 
-    
+
 }
 }
 console.log(Dubai);
@@ -210,11 +346,11 @@ let Paris={
            console.log(this.randomCust[i]);
        } ;
    },
-        
-    
+
+
 averageCust: function () {
     for(let i=0;i<workHour.length;i++){
-     let mult= this.avarge*this.randomCust[i] 
+     let mult= this.avarge*this.randomCust[i]
      mult=Math.floor(mult)
      this.avaregCustprHor.push(`${mult}`)
      this.ptotal+=mult
@@ -222,7 +358,7 @@ averageCust: function () {
         console.log(this.avaregCustprHor[i])
     }
 
-    
+
 }
 }
 console.log(Paris);
@@ -275,11 +411,11 @@ let Lima={
            console.log(this.randomCust[i]);
        } ;
    },
-        
-    
+
+
 averageCust: function () {
     for(let i=0;i<workHour.length;i++){
-     let mult= this.avarge*this.randomCust[i] 
+     let mult= this.avarge*this.randomCust[i]
      mult=Math.floor(mult)
      this.avaregCustprHor.push(`${mult}`)
      this.ltotal+=mult
@@ -287,7 +423,7 @@ averageCust: function () {
         console.log(this.avaregCustprHor[i])
     }
 
-    
+
 }
 }
 console.log(Lima);
@@ -316,17 +452,4 @@ for(let i=0;i<workHour.length;i++){
 }
 let ltotalElement=document.createElement("li");
 lulelement.appendChild(ltotalElement);
-ltotalElement.textContent=`total=${Lima.ltotal}cookies`
-
-
-
-
-
-
-
-
-
-
-
-
-
+ltotalElement.textContent=`total=${Lima.ltotal}cookies`}*/
