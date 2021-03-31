@@ -75,7 +75,7 @@ let Tokyo={
     avarge:1.2,
    randomCust:[],
   avaregCustprHor:[],
-  Total:0,
+  Ttotal:0,
 // total:sum(avaregCustprHor),
  getRandomcookis:  function () {
        for(let i=0; i<=workHour.length;i++){
@@ -91,7 +91,7 @@ averageCust: function () {
      let mult= this.avarge*this.randomCust[i] 
      mult=Math.floor(mult)
      this.avaregCustprHor.push(`${mult}`)
-     this.Total+=mult
+     this.Ttotal+=mult
 
         console.log(this.avaregCustprHor[i])
     }
@@ -123,9 +123,9 @@ for(let i=0;i<workHour.length;i++){
     tlielement.textContent=`${workHour[i]} ${Tokyo.avaregCustprHor[i]} cookies  `
 
 }
-let TotalElement=document.createElement("li");
-ulelement.appendChild(TotalElement);
-TotalElement.textContent=`total=${Tokyo.Total}cookies`
+let TtotalElement=document.createElement("li");
+tulelement.appendChild(TtotalElement);
+TtotalElement.textContent=`total=${Tokyo.Ttotal}cookies`
 
 
 
@@ -188,7 +188,7 @@ for(let i=0;i<workHour.length;i++){
 }
 let dtotalElement=document.createElement("li");
 dulelement.appendChild(dtotalElement);
-dtotalElement.textContent=`total=${Dubai.total}cookies`
+dtotalElement.textContent=`total=${Dubai.dtotal}cookies`
 
 
 
@@ -316,7 +316,7 @@ for(let i=0;i<workHour.length;i++){
 }
 let ltotalElement=document.createElement("li");
 lulelement.appendChild(ltotalElement);
-ltotalElement.textContent=`total=${Lima.total}cookies`
+ltotalElement.textContent=`total=${Lima.ltotal}cookies`
 
 
 
