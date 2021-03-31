@@ -121,22 +121,31 @@ Lima.render()
 
 
 
-
+function makingFooter(){
     let lastRow=document.createElement('tr')
     table.appendChild(lastRow);
     lastRow.textContent='total'
     for (let i = 0; i <workHour.length; i++) {
-        
+        let finalTotal
+        let sumTotal=0;
+        for(let j=0 ; j<shops.length ; j++ ){
+            finalTotal=0;
+            finalTotal+=shops[j].randomCust[i];
+            sumTotal+=shops[j].randomCust[i];
 
-            let totalFinal=document.createElement('td')
+          
+        } 
+        let totalFinal=document.createElement('td')
         lastRow.appendChild(totalFinal);
-        totalFinal.textContent=this.avaregCustprHor[i]
-            
+        totalFinal.textContent=finalTotal 
         }
+        let megaTh=document.createElement('th')
+        lastRow.appendChild(megaTh)
+        megaTh.textContent=sumTotal
         
         
-        
-    
+    }  
+    makingFooter()
     
 
 
