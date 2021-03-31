@@ -9,7 +9,7 @@ function Cityshop(shopName, minHour, maxHour, avarge,total, getRandomcookis, ave
         this.avarge = avarge,
         this.randomCust = [],
         this.avaregCustprHor = [],
-        this.total = 0 ,
+        this.total = 0,
 
 
         this.getRandomcookis = this.getRandomcookis /* function () {
@@ -59,7 +59,9 @@ Cityshop.prototype.averageCust = function () {
 
         console.log(this.avaregCustprHor[i])
 
+
     }
+    
 }
 
 let seattle = new Cityshop('seattle',23, 65, 6.3);
@@ -124,7 +126,7 @@ Lima.render()
     table.appendChild(lastRow);
     lastRow.textContent='total'
     for (let i = 0; i <workHour.length; i++) {
-        for (let i = 0; i <this.randomCust; i++) {
+        
 
             let totalFinal=document.createElement('td')
         lastRow.appendChild(totalFinal);
@@ -134,7 +136,7 @@ Lima.render()
         
         
         
-    }
+    
     
 
 
