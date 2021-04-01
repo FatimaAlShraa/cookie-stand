@@ -71,11 +71,6 @@ let Paris = new Cityshop('Pris',20, 38, 2.3);
 let Lima = new Cityshop('lima',2, 16, 4.6);
 
 
-seattle.getRandomcookis();
-Tokyo.getRandomcookis();
-Dubai.getRandomcookis();
-Paris.getRandomcookis();
-Lima.getRandomcookis();
 
 let parent = document.getElementById("parent");
 let table = document.createElement('table');
@@ -103,14 +98,14 @@ Cityshop.prototype.render=function(){
     nameData.textContent= this.shopName
 
     for(let i=0;i<workHour.length ; i++){
-        let cookie=document.createElement('td')
-        shopRow.appendChild(cookie)
-        cookie.textContent=this.randomCust[i]
+        let cookie=document.createElement('td');
+        shopRow.appendChild(cookie);
+        cookie.textContent=this.randomCust[i];
 
 
-      }  //console.log('hello ',shops[i]);
-    let dialyTotal=document.createElement('td')
-    shopRow.appendChild(dialyTotal)
+      } //console.log('hello ',shops[i]);
+    let dialyTotal=document.createElement('td');
+    shopRow.appendChild(dialyTotal);
     dialyTotal.textContent=this.total
 }
 seattle.render()
