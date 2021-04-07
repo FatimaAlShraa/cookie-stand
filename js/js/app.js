@@ -1,118 +1,127 @@
 'use strict';
-let workHour = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
-let shops = [];
+let workHours=['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];
+let stores =[];
 
-function Cityshop(shopName, minHour, maxHour, avarge,total, getRandomcookis, averageCust) {
-    this.shopName = shopName,
-    this.minHour = minHour,
-        this.maxHour = maxHour,
-        this.avarge = avarge,
-        this.randomCust = [],
-        this.avaregCustprHor = [],
-        this.total = 0,
+function cityShop(name, minCust , maxCust, averageCookies ){
+this.name= name;
+this.minCust =minCust;
+this.maxCust=maxCust;
+this.averageCookies=averageCookies;
+this.CustomersNum=[];
+this.averageCust=[];
+this.total=0;
 
+stores.push(this)
+};
+console.log(stores)
 
-        this.getRandomcookis = this.getRandomcookis /* function () {
-       for(let i=0; i<=workHour.length;i++){
-           this.randomCust.push (Math.floor(Math.random() *
-           (this.maxHour - this.minHour)) + this.minHour);
-           console.log(this.randomCust[i]);
-       } ;
-   },*/
-
-
-    this.averageCust = this.averageCust
-    /* function () {
-        for(let i=0;i<workHour.length;i++){
-         let mult= this.avarge*this.randomCust[i] 
-         mult=Math.floor(mult)
-         this.avaregCustprHor.push(`${mult}`)
-         this.total+=mult
-    
-            console.log(this.avaregCustprHor[i])
-        }*/
-    shops.push(this)
-
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
-//console.log(Seattle);
-//Seattle.getRandomcookis()
-//Seattle.averageCust()
 
 
+cityShop.prototype.getCust=function() { 
+    for (let i = 0; i <workHours.length; i++){
 
-
-Cityshop.prototype.getRandomcookis = function () {
-    for (let i = 0; i <= workHour.length; i++) {
-        this.randomCust.push(Math.floor(Math.random() *
-            (this.maxHour - this.minHour)) + this.minHour);
-        console.log(this.randomCust[i]);
-    };
-}
-
-Cityshop.prototype.averageCust = function () {
-    for (let i = 0; i < workHour.length; i++) {
-        let mult = this.avarge * this.randomCust[i]
-        mult = Math.floor(mult)
-        this.avaregCustprHor.push(`${mult}`)
-        this.total += mult
-
-        console.log(this.avaregCustprHor[i])
-
+        this.CustomersNum.push(getRndInteger(this.minCust, this.maxCust));
 
     }
+
+ }
+
+ cityShop.prototype.getCookie= function () {
+    for (let i = 0; i < this.CustomersNum.length; i++) {
+      let  mult=this.CustomersNum[i] * this.averageCookies;
+     mult=Math.floor(mult)
+      this.averageCust.push(mult);
+     this.total+=this.averageCust[i]
+    }
+}
+
+let seattle = new cityShop('Seattle', 23, 65 , 6.3 );
+console.log(seattle);
+seattle.getCust();
+seattle.getCookie();
+
+
+
+let Tokyo =new cityShop('Tokyo', 3, 24, 1.2);
+Tokyo.getCust();
+Tokyo.getCookie();
+console.log(Tokyo);
+
+let Dubai=new cityShop('Dubai', 11, 38, 3.7);
+Dubai.getCust();
+Dubai.getCookie();
+console.log(Dubai);
+
+let Paris=new cityShop('Paris',20 ,38 ,2.3 );
+Paris.getCust();
+Paris.getCookie();
+console.log(Paris);
+
+let Lima=new cityShop('Lima', 2, 16 ,4.6 );
+Lima.getCust();
+Lima.getCookie();
+console.log(Lima);
+
+
+
+
+let parent=document.getElementById('parent');
+let table=document.createElement('table');
+parent.appendChild(table);
+
+
+let headerHoures=[' ','6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', 'Daily location total'];
+
+
+//creat the header for the table:
+ function makingHeader(){
+let tr=document.createElement('tr')
+table.appendChild(tr)
+
+for(let i=0; i< headerHoures.length;i++){
+    let th=document.createElement('th')
+    tr.appendChild(th)
+    th.textContent=headerHoures[i]
+}
+}
+
+// creat the tr, td that has the nombers of cookies for all the stores 
+cityShop.prototype.render= function(){
+    let shopRow=document.createElement('tr')
+    table.appendChild(shopRow)
+    let td=document.createElement('td')
+    shopRow.appendChild(td)
+   td.textContent=this.name
+
+    for(let i=0; i<workHours.length;i++){
+       let cityRow=document.createElement('td')
+       shopRow.appendChild(cityRow)
+       cityRow.textContent=this.averageCust[i]
+       
+    }
+    let dailyTotalTd= document.createElement('td')
+    shopRow.appendChild(dailyTotalTd)
+    dailyTotalTd.textContent=this.total
     
 }
+// creat footer 
 
-let seattle = new Cityshop('seattle',23, 65, 6.3);
-let Tokyo = new Cityshop('Tokyo',3, 24, 1.2);
-let Dubai = new Cityshop('Dubai',11, 38, 3.7);
-let Paris = new Cityshop('Pris',20, 38, 2.3);
-let Lima = new Cityshop('lima',2, 16, 4.6);
+//calling the functions
+makingHeader();
 
-
-
-let parent = document.getElementById("parent");
-let table = document.createElement('table');
-parent.appendChild(table);
-let headingRow = document.createElement('tr');
-table.appendChild(headingRow);
-let heading = ['', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', 'Daily Location Total']
-
-for (let i = 0; i < heading.length; i++) {
-    let thElement = document.createElement('th');
-    headingRow.appendChild(thElement);
-    thElement.textContent = heading[i];
-
-
-
-}
-
-
-Cityshop.prototype.render=function(){
-    //for(let i=0;i<shops.length ; i++){
-    let shopRow=document.createElement('tr');
-    table.appendChild(shopRow);
-    let nameData=document.createElement('td');
-    shopRow.appendChild(nameData);
-    nameData.textContent= this.shopName
-
-    for(let i=0;i<workHour.length ; i++){
-        let cookie=document.createElement('td');
-        shopRow.appendChild(cookie);
-        cookie.textContent=this.randomCust[i];
-
-
-      } //console.log('hello ',shops[i]);
-    let dialyTotal=document.createElement('td');
-    shopRow.appendChild(dialyTotal);
-    dialyTotal.textContent=this.total
-}
-seattle.render()
-Tokyo.render()
-Dubai.render()
+seattle.render();
+Tokyo.render();
+Dubai.render();
+Lima.render();
 Paris.render()
-Lima.render()
+
+
+
+
 
 
 
@@ -120,13 +129,14 @@ function makingFooter(){
     let lastRow=document.createElement('tr')
     table.appendChild(lastRow);
     lastRow.textContent='total'
-    for (let i = 0; i <workHour.length; i++) {
-        let finalTotal
-        let sumTotal=0;
-        for(let j=0 ; j<shops.length ; j++ ){
-            finalTotal=0;
-            finalTotal+=shops[j].randomCust[i];
-            sumTotal+=shops[j].randomCust[i];
+    var megaTotal = 0;
+    for (let i = 0; i <workHours.length; i++) {
+        let finalTotal;
+        finalTotal=0;
+        for(let j=0 ; j<stores.length ; j++ ){
+            
+            finalTotal+=stores[j].averageCust[i];
+            megaTotal+=stores[j].averageCust[i];
 
           
         } 
@@ -136,11 +146,72 @@ function makingFooter(){
         }
         let megaTh=document.createElement('th')
         lastRow.appendChild(megaTh)
-        megaTh.textContent=sumTotal
+        megaTh.textContent=megaTotal
         
         
     }  
     makingFooter()
+
+
+
+  //get element by id
+    let storeForm= document.getElementById('storeForm');
+
+    // event listner
+
+    storeForm.addEventListener('submit' , accept)
+
+// creat fun.
+
+     function accept(event){
+         event.preventDefault()
+     
+
+     console.log(event);
+
+     let name=event.target.nameField.value;
+     console.log(name);
+
+     let minCust=parseInt(event.target.minCust.value);
+     console.log(minCust)
+
+     let maxCust= parseInt(event.target.maxCust.value);
+     console.log(maxCust);
+     let averageCookies= parseInt(event.target.averageCookies.value);
+     console.log(averageCookies);
+
+     let addedCity= new cityShop(name,minCust,maxCust,averageCookies);
+     console.log(addedCity);
+
+     table.textContent="";
+     makingHeader();
+
+
+     for(let i=0;i<stores.length;i++){
+
+     stores[i].getCust();
+     stores[i].getCookie();
+     stores[i].render();
+    console.log(stores[i]);
+
+     }
+     makingFooter();
+
+     }
+    //  makingHeader();
+
+    //  for(let i=0;i<stores.length;i++){
+
+    //  stores[i].getCust();
+    //  stores[i].getCookie();
+    //  stores[i].render();
+    // console.log(stores[i]);
+
+    //  }
+    //  makingFooter();
+
+
+
     
 
 

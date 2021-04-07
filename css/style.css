@@ -1,7 +1,9 @@
 body {
     font-family: 'Dela Gothic One', cursive;
-    background-color: rgb(171, 246, 243);
-    color: indianred;
+    background-image: radial-gradient( circle 321px at 8.3% 75.7%,  rgba(209,247,241,1) 0%, rgba(249,213,213,1) 81% );
+    color: rgb(93, 84, 84);
+    
+
 }
 
 
@@ -20,6 +22,20 @@ a {
 
 
 table,th,td{
-    border:solid black 1px;
+    border:solid rgb(99, 92, 119) 1px;
     border-collapse: collapse;
+    text-align: center;
 }
+
+#storeForm{
+    font-size: medium;
+    color: rgb(55, 180, 71);
+    text-align: center;
+    
+}
+
+
+
+    
+   
+
