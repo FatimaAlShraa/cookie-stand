@@ -1,38 +1,102 @@
-body {
-    font-family: 'Dela Gothic One', cursive;
-    background-image: radial-gradient( circle 321px at 8.3% 75.7%,  rgba(209,247,241,1) 0%, rgba(249,213,213,1) 81% );
-    color: rgb(93, 84, 84);
-    
+body{
+   box-sizing: border-box;
+   
+   color:rgb(20, 5, 5); 
+    font-family: 'RocknRoll One', sans-serif
+}
+header{
+    background-image: url(/img/cookie.jpg);
+
+padding: 40px;
+text-align: center;
+color: rgb(20, 5, 5);
 
 }
+
 
 
 
 a {
     text-decoration: none;
-    color:crimson
+    font-size: 20px;
+    color:rgb(20, 5, 5);
+    background-color: rgb(119, 172, 145);
+    border-radius: 6px;
+    border-style: hidden;
+    float: right;
+
 }
  a:hover{
     text-decoration: none;
-    color:hotpink
+    color:rgb(90, 54, 17);
+    background-color: silver;
  }
-
-
-
-
-
-table,th,td{
-    border:solid rgb(99, 92, 119) 1px;
-    border-collapse: collapse;
-    text-align: center;
+ #to{
+     text-align: center;
+     color: rgb(20, 5, 5);
+ }
+ ul li{
+     display: inline-block;
+     margin-left: 20px;
+     margin-right: 20px;
+     padding: 20px;
+ }ul li:hover{
+     color: rgb(110, 178, 235);
+ }
+ #wel{
+     text-align: center;
+     color: rgb(20, 5, 5);;
+ }
+ #one{
+     text-align: right;
+ }
+ #sec{
+     margin-right: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+ }
+#sec:hover{
+    opacity: 0.7;
 }
 
-#storeForm{
-    font-size: medium;
-    color: rgb(55, 180, 71);
+#thi{
     text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+#thi:hover{
+    opacity: 0.7;
+
+}
+#forth{
+    text-align: right;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#forth:hover{
+    top:0px;
+    left:100px;
+    width:300px;
+    height:300px;
+}
+footer{
+    background-image: url(/img/cookie.jpg);
+    height: 70px;
+    text-align: center;
+
+}
     
-}
+
+
+
+
+
+
+
 
 
 

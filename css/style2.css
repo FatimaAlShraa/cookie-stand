@@ -1,0 +1,119 @@
+body{
+    font-family: 'Londrina Solid', cursive
+
+}
+
+header{
+    font-family: 'New Tegomin', serif;
+    text-align: center;
+    background-attachment: fixed;
+    background-color: rgb(157, 181, 228);
+     margin-top: 20px;
+     margin-bottom: 20px;
+     padding: 10px;
+
+     
+}
+
+
+form{
+  text-align: center;
+    border-radius: 6px;
+    border-color:white;
+    text-align: center;
+    width: max-content;
+    border-style: double;
+}
+
+
+
+input[type=text]{
+    border-color: thistle;
+    width: 130px;
+    border-radius: 6px;
+    
+
+
+}
+
+input[type=number]{
+    border-color: thistle;
+    width: 130px;
+    border-radius: 6px;
+    
+
+}
+
+
+input[type=submit]{
+    background-color: rgb(48, 175, 175);
+    width: 70px;
+    height: 30px;
+    border-style: hidden;
+    border-radius: 6px;
+    color: rgb(37, 36, 36);
+}
+input[type=submit]:hover{
+    background-color: lightblue;
+    color: midnightblue;
+    font-style: italic;
+
+}
+@keyframes doggyFish {
+    0% {
+      left: -300px;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+#move{
+    
+  position: relative;
+  
+  
+  animation:doggyFish 10s linear infinite;
+ 
+  transform:rotateX(150deg);
+   
+
+}
+
+
+table td{
+    border: solid lightblue;
+    border-style: groove;
+}
+table th{
+    border: groove;
+
+}
+table th:hover{
+    border-radius: 6px;
+    border-color: rgb(68, 6, 6);
+    border-style: dashed;
+}
+
+a {
+   font-size: 20px;
+   text-decoration: none;
+   color: saddlebrown;
+ 
+}
+a:hover{
+    color: steelblue;
+    
+}
+
+
+footer{
+    text-align: center;
+    background-color: rgb(157, 181, 228); 
+    height: 50px;
+    margin-bottom: 2px;
+    padding:30px;
+    margin-top:20px;
+}
+
+
+
