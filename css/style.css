@@ -5,7 +5,7 @@ body{
     font-family: 'RocknRoll One', sans-serif
 }
 header{
-    background-image: url(/img/cookie.jpg);
+    background-image: url(https://sallysbakingaddiction.com/wp-content/uploads/2013/06/recipe-salted-caramel-chocolate-chip-cookies.jpg);
 
 padding:40px;
 text-align: center;
@@ -45,7 +45,7 @@ a {
  }
  #wel{
      text-align: center;
-     color: rgb(20, 5, 5);;
+     color: rgb(20, 5, 5);
  }
  #one{
      text-align: right;
@@ -84,7 +84,7 @@ a {
     height:300px;
 }
 footer{
-    background-image: url(/img/cookie.jpg);
+    background-image: url(https://sallysbakingaddiction.com/wp-content/uploads/2013/06/recipe-salted-caramel-chocolate-chip-cookies.jpg);
     height: 70px;
     text-align: center;
 
